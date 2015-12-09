@@ -2,7 +2,7 @@ public class Perceptron {
 	double weights[];
 	double learningConstant = .01;
 	
-	//initialize all of the weights to random values
+	//initialize all of the weights to random values and take in the number of inputs this perceptron will have
 	public Perceptron(int numInputs){
 		weights = new double[numInputs];
 		for(int i = 0; i < numInputs; i++){
