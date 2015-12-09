@@ -2,6 +2,7 @@ public class Perceptron {
 	double weights[];
 	double learningConstant = .01;
 	
+	//initialize all of the weights to random values
 	public Perceptron(int numInputs){
 		weights = new double[numInputs];
 		for(int i = 0; i < numInputs; i++){
@@ -9,6 +10,7 @@ public class Perceptron {
 		}
 	}
 	
+	//take in the inputs and calculate the answer, then send it to the acivation function
 	public int feedforward(double[] inputs){
 		double sum = 0;
 		for(int i = 0; i < weights.length; i++){
@@ -17,6 +19,7 @@ public class Perceptron {
 		return activate(sum);
 	}
 	
+	//this is a very simple activation function right now, will have to change it to a sigmoid function once I figure out how to do that
 	public int activate(double sum){
 		if(sum > 0){
 			return 1;
@@ -24,6 +27,7 @@ public class Perceptron {
 		return -1;
 	}
 	
+	//this function changes the weights based on the difference between the desired answer and what it gave, I was testing it with a simple example
 	public void train(double[] inputs, int desired){
 		int guess = feedforward(inputs);
 		double error = desired - guess;
