@@ -1,0 +1,22 @@
+Previous Work
+Georgetown-IBM Experiment:
+Georgetown University and IBM developed a program in 1954 that translated Russian into English. It was primarily created for the purpose of attracting public interest and funding by showing what machine translation is capable of. It had access to only 6 grammar rules and 250 words, which heavily limited what it was able to translate. Despite this, it was considered a success after a demonstration was held in which 60 carefully chosen Russian sentences were translated by it. Funding to similar projects received greatly increased funding because of this and the developers of the program thought machine translation would be a thing of the past in 5 years time. Little progress was made over the next 10 years, though, and funding was cut.
+Eliza:
+Joseph Weizenbaum created a program called Eliza in 1964 that attempted to mimic a Rogerian Psychotherapist. Rogerian Psychotherapy is a type of therapy in which the conversation is driven by the client. The therapist responds to a clients answer by posing another question that is formed from the previous answer given. The program mimics this by parsing the input and trying to find synonyms for each word. After that, it puts the key words into a template and prints it for the user. Weizenbaum chose to program it in this way because he didn't want it to rely on large amounts of background knowledge while still being able to hold a conversation, which this type of therapy allowed. 
+Parry:
+A program named Parry was developed in 1972 by Kenneth Colby that tried to simulate a paranoid schizophrenic. It was programmed with a conversational strategy that would attempt to deflect questions that it thought were approaching vulnerable areas by using a system of assumptions and emotional responses. It is much more advanced than Eliza and held conversations with it on multiple occasions. When a transcript of a conversation it had had was compared with those of real patients, experienced psychiatrists were unable to determine who was human, meaning this was the first chatbot that passed the Turing test.
+Jabberwacky:
+Rollo Carpenter developed a chatbot in 1981 called Jabberwacky that would hold entertaining conversations with its users. It remembers every conversation it has ever had by storing them all in a very large database. Each time it is asked a question it searches through the database and tries to find a match for that question. If it finds a match, it outputs the response the user gave when it was asked that question. If no match is found, the closest one to the original is used instead and the response to that is printed. Cleverbot is a later variant of Jabberwacky that uses better methods to match the data.
+Tweet NLP:
+A tweet natural language processor was created by an informal collective of NLP researchers known as the Noah's Ark group. It works by reading in tweets using a text parser named TweeboParser which tries to identify the main points in the tweet and structures them into a tree graph in order to determine content. It then assigns a tag to each word that the parser collected based on what it believes it is, with a confidence rating also being generated that shows how likely it is correct.
+
+Citations
+"Georgetown-IBM Experiment." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
+"ELIZA." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
+"Person-Centered Therapy (Rogerian Therapy)." Person–Centered Therapy (Rogerian Therapy). N.p., n.d. Web. 13 Dec. 2015.
+"Eliza Test." Eliza Test. N.p., n.d. Web. 13 Dec. 2015. 
+"PARRY." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
+"PARRY." Artificial Intelligence. N.p., n.d. Web. 13 Dec. 2015. 
+"Jabberwacky." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
+"How Does the Chatbot Jabberwacky Work?" Quora. N.p., n.d. Web. 13 Dec. 2015.
+"Tweet NLP." Twitter Natural Language Processing. N.p., n.d. Web. 13 Dec. 2015. 
