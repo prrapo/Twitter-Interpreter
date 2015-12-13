@@ -2,6 +2,7 @@ public class NeuralNetwork {
 	double learningRate = .5;
 	NeuronLayer hiddenLayer;
 	NeuronLayer outputLayer;
+	WordConverter converter;
 	
 	public NeuralNetwork(int numInputs, int numHidden, int numOutputs){
 		hiddenLayer = new NeuronLayer(numHidden, numInputs);
@@ -11,6 +12,16 @@ public class NeuralNetwork {
 	public double[] feedForward(double[] inputs){
 		double[] hiddenLayerOutputs = hiddenLayer.feedForward(inputs);
 		return outputLayer.feedForward(hiddenLayerOutputs);
+	}
+	
+	public String process(String input){
+		String output = "";
+		double[] inputs = converter.convertFromWord(input);
+		feedForward(inputs);
+		for(double o: outputLayer.getOutputs()){
+			output += converter.convertToChar(o);
+		}
+		return output;
 	}
 	
 	public void train(double[] inputs, double[] desiredOutputs){
