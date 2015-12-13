@@ -20,7 +20,7 @@ Conclusions
 
 
 Future Work
-
+A better method for learning from tweets would help it greatly. The neural network could also be optimised by changing the number of inputs, outputs, and hidden neurons which would make it run more efficiently.
 
 Citations
 "Georgetown-IBM Experiment." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
