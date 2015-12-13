@@ -10,6 +10,9 @@ Rollo Carpenter developed a chatbot in 1981 called Jabberwacky that would hold e
 Tweet NLP:
 A tweet natural language processor was created by an informal collective of NLP researchers known as the Noah's Ark group. It works by reading in tweets using a text parser named TweeboParser which tries to identify the main points in the tweet and structures them into a tree graph in order to determine content. It then assigns a tag to each word that the parser collected based on what it believes it is, with a confidence rating also being generated that shows how likely it is correct.
 
+Method
+The tweet is split up into an array of words, each of which is sent to the neural network to be processed. The neural network first has to convert these words into inputs that it can understand, so it sends the word to the WordConverter class. This class will take a word, split it up into an array of characters and convert each character to a number that represents that character. The array of numbers that is returned to the network is the input for each of its input neurons. The weight of the connections between each neuron is randomized when it is created, so it simply outputs nonsense before it goes through the learning process. The network uses backpropagation to update the weights of each of these connections and, after enough data is processed, it will start outputting the correct numbers. These numbers are compressed with a logistic activation function and returned in an array. The array is sent back through the WordConverter and combined into a string. This string is the answer that the neural network has come to.
+
 Citations
 "Georgetown-IBM Experiment." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
 "ELIZA." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
