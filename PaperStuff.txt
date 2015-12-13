@@ -13,6 +13,15 @@ A tweet natural language processor was created by an informal collective of NLP 
 Method
 The tweet is split up into an array of words, each of which is sent to the neural network to be processed. The neural network first has to convert these words into inputs that it can understand, so it sends the word to the WordConverter class. This class will take a word, split it up into an array of characters and convert each character to a number that represents that character. The array of numbers that is returned to the network is the input for each of its input neurons. The weight of the connections between each neuron is randomized when it is created, so it simply outputs nonsense before it goes through the learning process. The network uses backpropagation to update the weights of each of these connections and, after enough data is processed, it will start outputting the correct numbers. These numbers are compressed with a logistic activation function and returned in an array. The array is sent back through the WordConverter and combined into a string. This string is the answer that the neural network has come to.
 
+Results
+It is difficult to teach the network the correct spellings of words since each tweet must be manually spell checked before being sent to it in order for it to learn and it takes hundreds of iterations before it starts to spell them correctly. When taught with common misspellings of words over a thousand iterations, though, it is always able to guess the correct spelling of the word.
+
+Conclusions
+
+
+Future Work
+
+
 Citations
 "Georgetown-IBM Experiment." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
 "ELIZA." Wikipedia. Wikimedia Foundation, n.d. Web. 13 Dec. 2015. 
