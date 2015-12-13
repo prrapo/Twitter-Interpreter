@@ -35,7 +35,7 @@ public class WordConverter {
 	
 	public char convertToChar(double num){
 		for(double i = 0; i < 28; i++){
-			if(num < i / 28){
+			if(num < i / 27){
 				return charList[(int)(i)];
 			}
 		}
