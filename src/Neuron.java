@@ -1,6 +1,5 @@
 public class Neuron {
 	double[] weights;
-	double learningConstant = .01;
 	double bias;
 	double output;
 	double[] inputs;
