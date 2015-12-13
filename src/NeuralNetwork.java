@@ -7,6 +7,12 @@ public class NeuralNetwork {
 	public NeuralNetwork(int numInputs, int numHidden, int numOutputs){
 		hiddenLayer = new NeuronLayer(numHidden, numInputs);
 		outputLayer = new NeuronLayer(numOutputs, numHidden);
+		
+		/*This is example code for using this network
+		NeuralNetwork network = new NeuralNetwork(15, 15, 15);
+		Trainer t = new Trainer(network, 1000, "tako", "taco");
+		System.out.println(network.process("tako"));
+		*/
 	}
 	
 	public double[] feedForward(double[] inputs){
