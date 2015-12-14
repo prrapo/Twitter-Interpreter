@@ -3,6 +3,7 @@ import java.util.*;
 
 import org.languagetool.JLanguageTool;
 import org.languagetool.language.AmericanEnglish;
+import org.languagetool.rules.Rule;
 import org.languagetool.rules.RuleMatch;
 
 import twitter4j.*;
@@ -25,6 +26,11 @@ public class Twitter_Interpreter {
 	public static void main(String[] args) throws TwitterException, IOException {
 		Twitter twitter = TwitterFactory.getSingleton();
 		JLanguageTool langTool = new JLanguageTool(new AmericanEnglish());
+		for (Rule rule : langTool.getAllRules()) {
+			if (!rule.isDictionaryBasedSpellingRule()){
+				langTool.disableRule(rule.getId());
+			}
+		}
 		List<String> twts = new ArrayList<String>();
 		for(String arg : args){
 			Query query = new Query(arg);
@@ -40,24 +46,18 @@ public class Twitter_Interpreter {
 						counter++;
 					}
 				}
-			} while((query = result.nextQuery()) != null && counter < 10);
+			} while((query = result.nextQuery()) != null && counter < 5);
 		}
 		for(String str : twts){
 			List<RuleMatch> matches = langTool.check(str);
 			for (RuleMatch match : matches) {
-//				System.out.println(match.getShortMessage());
-				if(match.getShortMessage().equalsIgnoreCase("Spelling mistake") && !match.getSuggestedReplacements().isEmpty()){	
-					System.out.println(match.getSuggestedReplacements().get(0));
+				if(match.getSuggestedReplacements().size() > 0){
+					NeuralNetwork network = new NeuralNetwork(15, 15, 15);
+					Trainer t = new Trainer(network, 1000, str.substring(match.getFromPos(), match.getToPos()), match.getSuggestedReplacements().get(0));
+					System.out.println(network.process(str.substring(match.getFromPos(), match.getToPos())));
 				}
-//				System.out.println("Potential error at line " +
-//						match.getLine() + ", column " +
-//						match.getColumn() + ": " + match.getMessage());
-//				System.out.println("Suggested correction: " +
-//						match.getSuggestedReplacements());
 			}
 		}
-//		NeuralNetwork network = new NeuralNetwork(15, 15, 15);
-//		Trainer t = new Trainer(network, 1000, "tako", "taco");
-//		System.out.println(network.process("tako"));
 	}
+	
 }
