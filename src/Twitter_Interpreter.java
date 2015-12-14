@@ -53,8 +53,8 @@ public class Twitter_Interpreter {
 			for (RuleMatch match : matches) {
 				if(match.getSuggestedReplacements().size() > 0){
 					NeuralNetwork network = new NeuralNetwork(15, 15, 15);
-					Trainer t = new Trainer(network, 1000, str.substring(match.getFromPos(), match.getToPos()), match.getSuggestedReplacements().get(0));
-					System.out.println(network.process(str.substring(match.getFromPos(), match.getToPos())));
+					Trainer t = new Trainer(network, 1000, str.substring(match.getFromPos(), match.getToPos()).toLowerCase(), match.getSuggestedReplacements().get(0).toLowerCase(), true);
+					System.out.println(network.process(str.substring(match.getFromPos(), match.getToPos()).toLowerCase()));
 				}
 			}
 		}
